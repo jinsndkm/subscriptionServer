@@ -1,6 +1,6 @@
 'user strict';
 var sql = require('./db.js');
-
+var Request = require("request");
 //Task object constructor
 var Task = function (task) {
     this.task = task.task;
@@ -34,18 +34,32 @@ Task.getTaskById = function createUser(taskId, result) {
     });
 };
 Task.getAllTask = function getAllTask(result) {
-    sql.query("Select * from tasks", function (err, res) {
+    // sql.query("Select * from tasks", function (err, res) {
 
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-        }
-        else {
-            console.log('tasks : ', res);
+    //     if (err) {
+    //         console.log("error: ", err);
+    //         result(null, err);
+    //     }
+    //     else {
+    //         console.log('tasks : ', res);
 
-            result(null, res);
-        }
-    });
+    //         result(null, res);
+    //     }
+    // });
+
+ 
+
+Request.get({
+    "headers": { "content-type": "application/json" },
+    "url": "http://httpbin.org/ip",
+ 
+}, (error, response, body) => {
+    if(error) {
+        result(null, error);
+    }else{
+    result(null, body);}
+    // console.dir(JSON.parse(body));
+});
 };
 Task.updateById = function (id, task, result) {
     sql.query("UPDATE tasks SET task = ? WHERE id = ?", [task.task, id], function (err, res) {
