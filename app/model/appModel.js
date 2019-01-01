@@ -15,6 +15,7 @@ Task.createTask = function createUser(newTask, result) {
             result(err, null);
         }
         else {
+            
             console.log(res.insertId);
             result(null, res.insertId);
         }
