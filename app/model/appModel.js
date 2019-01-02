@@ -51,7 +51,7 @@ Task.getAllTask = function getAllTask(result) {
 
 Request.get({
     "headers": { "content-type": "application/json" },
-    "url": "http://httpbin.org/ip",
+    "url": "https://httpbin.org/get",
  
 }, (error, response, body) => {
     if(error) {
