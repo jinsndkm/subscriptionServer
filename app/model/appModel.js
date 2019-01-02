@@ -15,7 +15,7 @@ Task.createTask = function createUser(newTask, result) {
             result(err, null);
         }
         else {
-            
+
             console.log(res.insertId);
             result(null, res.insertId);
         }
@@ -47,20 +47,21 @@ Task.getAllTask = function getAllTask(result) {
     //     }
     // });
 
- 
 
-Request.get({
-    "headers": { "content-type": "application/json","Authorization":"Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN" },
-    "url": "https://secure.fusebill.com/v1/Products?includePricing=true&includeGlCode=true",
 
- 
-}, (error, response, body) => {
-    if(error) {
-        result(null, error);
-    }else{
-    result(null, body);}
-    // console.dir(JSON.parse(body));
-});
+    Request.get({
+        "headers": { "content-type": "application/json", "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN" },
+        "url": "https://secure.fusebill.com/v1/Products?includePricing=true&includeGlCode=true",
+
+
+    }, (error, response, body) => {
+        if (error) {
+            result(null, error);
+        } else {
+            result(null, body);
+        }
+        // console.dir(JSON.parse(body));
+    });
 };
 Task.updateById = function (id, task, result) {
     sql.query("UPDATE tasks SET task = ? WHERE id = ?", [task.task, id], function (err, res) {
