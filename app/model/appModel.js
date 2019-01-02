@@ -50,8 +50,9 @@ Task.getAllTask = function getAllTask(result) {
  
 
 Request.get({
-    "headers": { "content-type": "application/json" },
-    "url": "https://httpbin.org/get",
+    "headers": { "content-type": "application/json","Authorization":"Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN" },
+    "url": "https://secure.fusebill.com/v1/Products?includePricing=true&includeGlCode=true",
+
  
 }, (error, response, body) => {
     if(error) {
