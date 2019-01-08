@@ -3,6 +3,9 @@
 var Task = require('../model/appModel.js');
 
 exports.list_all_tasks = function (req, res) {
+
+
+
     Task.getAllTask(function (err, task) {
 
         console.log('controller')

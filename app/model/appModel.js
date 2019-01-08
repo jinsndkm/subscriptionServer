@@ -47,21 +47,31 @@ Task.getAllTask = function getAllTask(result) {
     //     }
     // });
 
+    console.log("Worked!!!!")
+    var stripe = require("stripe")("sk_live_WcIoDcfVidYWkaNoELBX2NIX");
 
 
-    Request.get({
-        "headers": { "content-type": "application/json", "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN" },
-        "url": "https://secure.fusebill.com/v1/Products?includePricing=true&includeGlCode=true",
+
+stripe.invoiceItems.create({
+  amount: 2500,
+  currency: 'usd',
+  customer: 'cus_EISwwYdJ3pguqw',
+  description: 'setup fee',
+});
+
+    // Request.get({
+    //     "headers": { "content-type": "application/json", "Authorization": " Bearer sk_live_WcIoDcfVidYWkaNoELBX2NIX" },
+    //     "url": "https://api.stripe.com/v1/customers?limit=3",
 
 
-    }, (error, response, body) => {
-        if (error) {
-            result(null, error);
-        } else {
-            result(null, body);
-        }
-        // console.dir(JSON.parse(body));
-    });
+    // }, (error, response, body) => {
+    //     if (error) {
+    //         result(null, error);
+    //     } else {
+    //         result(null, body);
+    //     }
+    //     // console.dir(JSON.parse(body));
+    // });
 };
 Task.updateById = function (id, task, result) {
     sql.query("UPDATE tasks SET task = ? WHERE id = ?", [task.task, id], function (err, res) {
