@@ -15,4 +15,7 @@ module.exports = function (app) {
 
     app.route('/fusebill')
         .get(service.get_all_services);
+
+        app.route('/subscription/cancel')
+        .post(service.cancel_subscription);
 }
