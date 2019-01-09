@@ -15,7 +15,6 @@ exports.get_all_services = function (req, res) {
 
 exports.cancel_subscription = function (req, res) {
     var sub=new Services(req.body);
-  ;
     Services.cancelSubsription(sub,function (err,sub) {
 
         console.log('service controller')
