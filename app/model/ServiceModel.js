@@ -6,6 +6,7 @@ var stripe = require("stripe")("sk_live_WcIoDcfVidYWkaNoELBX2NIX");
 var Services = function(services){
     this.subscriptionId = services.subscriptionId;
     // this.name = services.name;
+    this.httpStatusCode=services.httpStatusCode;
    this.cancellationOption = services.cancellationOption;
 }
 
@@ -36,14 +37,12 @@ Services.cancelSubsription=function cancelSubsription(sub,result){
             return console.dir(error);
         }
       // return console.dir(JSON.parse(response));
-       console.dir(JSON.parse(body));
-
+       console.dir("BB"+JSON.stringify(body));
+   console.dir(error)
        result(null, body);
         
     });
 
-
-    console.log("Final"+sub.subId);
 }
 
 module.exports = Services;
