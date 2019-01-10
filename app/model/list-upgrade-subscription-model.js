@@ -7,13 +7,14 @@ var listUpgradeSubscription = function (subscriptions) {
     this.name = subscriptions.name;
     this.description = subscriptions.description;
     this.plans=subscriptions.plans;
-    this.code=subscriptions.coded;
+    this.code=subscriptions.code;
     this.planFamilyRelationship=subscriptions.planFamilyRelationship;
     this.planFrequencies=subscriptions.planFrequencies;
 }
 
 
 listUpgradeSubscription.list_upgrade_subscriptions= function ListSubscriptions(subId,result) {
+    console.log("YYYYY"+subId)
     Request.get({
         "headers": {
             "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN",
@@ -25,9 +26,9 @@ listUpgradeSubscription.list_upgrade_subscriptions= function ListSubscriptions(s
             return console.dir(error);
         }
         // return console.dir(JSON.parse(response));
-        // console.dir(JSON.parse(body));
-        console.log(JSON.stringify("|||||||||"+body.planFamilyRelationship));
-        result(null, body);
+        console.dir(JSON.parse(body));
+        // console.log(JSON.parse("|||||||||"+body));
+        result(null, body); 
 
     });
 

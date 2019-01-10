@@ -1,7 +1,6 @@
 'use strict';
 
 var ListUpgradeSubscriptions = require('../model/list-upgrade-subscription-model');
-
 exports.list_upgrade_subscriptions = function (req, res) {
     ListUpgradeSubscriptions.list_upgrade_subscriptions(req.params.subId,function (err, services) {
 
@@ -12,3 +11,4 @@ exports.list_upgrade_subscriptions = function (req, res) {
         res.send(services);
     });
 }
+
