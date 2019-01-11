@@ -6,6 +6,7 @@ var Request = require("request");
 var Subscriptions = function (subscriptions) {
     this.planName = subscriptions.planName;
     this.status = subscriptions.status;
+    this.planFrequency.planRevisionId = subscriptions.planFrequency.planRevisionId;
 }
 
 
