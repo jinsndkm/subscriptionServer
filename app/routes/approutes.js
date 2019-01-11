@@ -4,6 +4,7 @@ module.exports = function (app) {
     var service = require('../controller/ServiceController');
     var todoList = require('../controller/appController');
     var mySubscrriptios = require('../controller/MySubscriptionController');
+    var serviceList = require('../controller/addServiceController');
     // todoList Routes
     app.route('/tasks')
         .get(todoList.list_all_tasks)
@@ -22,4 +23,7 @@ module.exports = function (app) {
         
         app.route('/mysubscriprions')
         .get(mySubscrriptios.get_my_subscriptions);
+
+        app.route('/servicelist')
+        .get(serviceList.get_all_services);
 }
