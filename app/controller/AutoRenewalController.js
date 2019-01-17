@@ -9,10 +9,10 @@ exports.my_subscriptions_autorenewal = function (req, res) {
 
     console.log(subscriptionId);
 
-    // Autorenewal.postAutoRenewal(subscriptionId, function (err, services) {
-    //     if (err)
-    //         res.send(err);
-    //     //console.log('res', services);
-    //     res.send(services);
-    // });
+    Autorenewal.getSubscriptionDetails(subscriptionId, function (err, services) {
+        if (err)
+            res.send(err);
+        //console.log('res', services);
+        res.send(services);
+    });
 }

@@ -28,5 +28,5 @@ module.exports = function (app) {
     app.route('/mysubscription/viewSubscription/:subId')
         .get(viewSubscriptionDetails.get_subscription_details);
     app.route('/mysubscription/autorenewal/:subscriptionId')
-        .post(autoRenewal.my_subscriptions_autorenewal);
+        .get(autoRenewal.my_subscriptions_autorenewal);
 }
