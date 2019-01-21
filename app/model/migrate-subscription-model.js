@@ -25,6 +25,7 @@ migrateSubscription.migrate_subscriptions= function migrateSubscription(migrateS
             console.log("ERRRor"+error)
             return console.dir(error);
         }
+        console.log(body)
         // return console.dir(JSON.parse(response));
         result(null, body);
 
