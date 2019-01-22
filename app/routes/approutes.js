@@ -32,7 +32,7 @@ module.exports = function (app) {
 
     app.route('/mysubscription/viewSubscription/:subId')
         .get(viewSubscriptionDetails.get_subscription_details);
-    app.route('/mysubscription/autorenewal/:subscriptionId')
+    app.route('/mysubscription/autorenewal/:subscriptionId/:status')
         .get(autoRenewal.my_subscriptions_autorenewal);
 
         app.route('/subscription/listupgradesubscriptions/:subId')
