@@ -15,7 +15,7 @@ Subscriptions.getSubscriptions= function allServices(result) {
             "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN",
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/customers/4871251/subscriptions"
+        "url": "https://secure.fusebill.com/v1/customers/4848884/subscriptions"
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);
