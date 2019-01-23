@@ -47,17 +47,17 @@ Task.getAllTask = function getAllTask(result) {
     //     }
     // });
 
-    console.log("Worked!!!!")
-    var stripe = require("stripe")("sk_live_WcIoDcfVidYWkaNoELBX2NIX");
+//     console.log("Worked!!!!")
+//     var stripe = require("stripe")("sk_live_WcIoDcfVidYWkaNoELBX2NIX");
 
 
 
-stripe.invoiceItems.create({
-  amount: 2500,
-  currency: 'usd',
-  customer: 'cus_EISwwYdJ3pguqw',
-  description: 'setup fee',
-});
+// stripe.invoiceItems.create({
+//   amount: 2500,
+//   currency: 'usd',
+//   customer: 'cus_EISwwYdJ3pguqw',
+//   description: 'setup fee',
+// });
 
     // Request.get({
     //     "headers": { "content-type": "application/json", "Authorization": " Bearer sk_live_WcIoDcfVidYWkaNoELBX2NIX" },
