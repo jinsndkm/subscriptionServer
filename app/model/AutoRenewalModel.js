@@ -2,7 +2,6 @@
 var sql = require('../db/db.js');
 var Request = require("request");
 var http = require("http");
-var autoRenewal = require("../model/auto-renewal-model")
 
 //Task object constructor
 var AutoRenewalDetail = function (autoRenewalDetail) {
