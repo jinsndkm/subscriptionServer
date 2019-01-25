@@ -12,7 +12,6 @@ var subscription = function(subscription){
 
 
 subscription.create_subscriptions = function allServices(createSub,result) {
-   
     Request.post({
         "headers": {
             "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN",
@@ -25,7 +24,7 @@ subscription.create_subscriptions = function allServices(createSub,result) {
             console.log("ERRRor"+error)
             return console.dir(error);
         }
-        console.log(body)
+        console.log("create subscription ::>> "+body);
         // return console.dir(JSON.parse(response));
         result(null, body);
 
