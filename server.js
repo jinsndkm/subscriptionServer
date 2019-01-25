@@ -40,17 +40,17 @@ var corsOptions = {
 app.use(cors(corsOptions))
 /*-----------------------------Cross-origin resource sharing End-------------------------*/
 
-const mysql = require('mysql');
-// connection configurations
-const mc = mysql.createConnection({
-    host: '192.168.1.104',
-    user: 'root',
-    password: 'root',
-    database: 'nodejs'
-});
+// const mysql = require('mysql');
+// // connection configurations
+// const mc = mysql.createConnection({
+//     host: '192.168.1.104',
+//     user: 'root',
+//     password: 'root',
+//     database: 'nodejs'
+// });
 
-// connect to database
-mc.connect();
+// // connect to database
+// mc.connect();
 
 app.listen(port);
 
