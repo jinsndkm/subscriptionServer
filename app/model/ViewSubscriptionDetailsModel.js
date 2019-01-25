@@ -10,6 +10,7 @@ var SubscriptionDetails = function (subscriptionDetails) {
     this.planFrequency = subscriptionDetails.planFrequency;
     this.nextPeriodStartDate = subscriptionDetails.nextPeriodStartDate;
     this.openSubscriptionPeriodEndDate = subscriptionDetails.openSubscriptionPeriodEndDate;
+    this.planDescription = SubscriptionDetails.planDescription;
 }
 
 
