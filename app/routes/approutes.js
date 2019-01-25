@@ -16,6 +16,7 @@ module.exports = function (app) {
 
     var listSubscriptions= require('../controller/list-upgrade-subscription-controller');
     var migratesubscription= require('../controller/migrate-subscription-controller');
+    var checkCardDetails= require('../controller/check-card-details-controller');
 
     // todoList Routes
     app.route('/tasks')
@@ -61,5 +62,8 @@ module.exports = function (app) {
         .get(listSubscriptions.list_upgrade_subscriptions);
         app.route('/subscription/migratesubscription')
         .post(migratesubscription.migrate_subscriptions);
+
+        app.route('/checkcarddetails/:custId')
+        .get(checkCardDetails.check_card_details);
 
 }
