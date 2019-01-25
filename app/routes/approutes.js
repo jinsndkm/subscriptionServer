@@ -14,9 +14,13 @@ module.exports = function (app) {
     var viewSubscriptionDetails = require('../controller/ViewSubscriptionDetailsController');
     var autoRenewal = require('../controller/AutoRenewalController');
 
+    var listSubscriptions = require('../controller/list-upgrade-subscription-controller');
+    var migratesubscription = require('../controller/migrate-subscription-controller');
+
     var listSubscriptions= require('../controller/list-upgrade-subscription-controller');
     var migratesubscription= require('../controller/migrate-subscription-controller');
     var checkCardDetails= require('../controller/check-card-details-controller');
+
 
     // todoList Routes
     app.route('/tasks')
@@ -38,19 +42,19 @@ module.exports = function (app) {
         .get(mySubscrriptios.get_my_subscriptions);
 
 
-        app.route('/servicelist')
+    app.route('/servicelist')
         .get(serviceList.get_all_services);
 
-        app.route('/planproducts/:subId')
+    app.route('/planproducts/:subId')
         .get(productList.get_product_list);
 
-        app.route('/plandetails/:subId')
+    app.route('/plandetails/:subId')
         .get(plandetails.get_plan_details);
 
-        app.route('/subscription/create')
+    app.route('/subscription/create')
         .post(subscription.create_subscription);
 
-        app.route('/subscription/activate')
+    app.route('/subscription/activate')
         .post(activateSub.activate_subscription);
 
     app.route('/mysubscription/viewSubscription/:subId')
@@ -58,9 +62,9 @@ module.exports = function (app) {
     app.route('/mysubscription/autorenewal/:subscriptionId/:status')
         .get(autoRenewal.my_subscriptions_autorenewal);
 
-        app.route('/subscription/listupgradesubscriptions/:subId')
+    app.route('/subscription/listupgradesubscriptions/:subId')
         .get(listSubscriptions.list_upgrade_subscriptions);
-        app.route('/subscription/migratesubscription')
+    app.route('/subscription/migratesubscription')
         .post(migratesubscription.migrate_subscriptions);
 
         app.route('/checkcarddetails/:custId')

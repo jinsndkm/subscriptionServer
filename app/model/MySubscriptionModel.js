@@ -29,7 +29,4 @@ Subscriptions.getSubscriptions= function allServices(result) {
     });
 
 }
-
-
-
 module.exports = Subscriptions;
