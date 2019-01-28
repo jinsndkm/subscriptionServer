@@ -9,6 +9,9 @@ var ServicesList = function(servicesList){
    this.planFrequencies=servicesList.planFrequencies;
    this.id=servicesList.id;
    this.code=servicesList.code;
+   this.description = servicesList.description;
+   this.longdescription = servicesList.longdescription;
+   this.code = servicesList.code;
 }
 
 ServicesList.getServiceList = function allServices(result) {
