@@ -7,16 +7,17 @@ var Subscriptions = function (subscriptions) {
     this.planName = subscriptions.planName;
     this.status = subscriptions.status;
     this.planFrequency.planRevisionId = subscriptions.planFrequency.planRevisionId;
+    this.planCode = subscriptions.planCode;
 }
 
 
 Subscriptions.getSubscriptions= function allServices(result) {
     Request.get({
         "headers": {
-            "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN",
+            "Authorization": "Basic MDpRU2tCZlRkVGVVVGVYWTRyNllmZEhITlRKMEhmWHphdXZ5cEFmNFpYOEMwTnEwUm5sZHRlRXpWS2ttU3Z2dVdH",
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/customers/4848884/subscriptions?query=status:Active"
+        "url": "https://secure.fusebill.com/v1/customers/4849387/subscriptions?query=status:Active"
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);

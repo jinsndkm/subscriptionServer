@@ -4,17 +4,18 @@ var Request = require("request");
 
 
 
-var subscription = function(subscription){
+var Subscription = function(subscription){
     this.subscription=subscription;
+    this.id = subscription.id;
 }
 
 
 
 
-subscription.create_subscriptions = function allServices(createSub,result) {
+Subscription.create_subscriptions = function allServices(createSub,result) {
     Request.post({
         "headers": {
-            "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN",
+            "Authorization": "Basic MDpRU2tCZlRkVGVVVGVYWTRyNllmZEhITlRKMEhmWHphdXZ5cEFmNFpYOEMwTnEwUm5sZHRlRXpWS2ttU3Z2dVdH",
             "Content-Type": "application/json"
         },
         "url":"https://secure.fusebill.com/v1/subscriptions",
@@ -38,4 +39,4 @@ subscription.create_subscriptions = function allServices(createSub,result) {
 
 
 
-module.exports = subscription;
+module.exports = Subscription;
