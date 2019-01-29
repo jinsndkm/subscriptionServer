@@ -17,7 +17,7 @@ var ServicesList = function(servicesList){
 ServicesList.getServiceList = function allServices(result) {
     Request.get({
         "headers": {
-            "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN",
+            "Authorization": globalString,
             "Content-Type": "application/json"
         },
         "url": "https://secure.fusebill.com/v1/Plans/?query=status:Active"

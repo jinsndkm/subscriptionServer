@@ -14,7 +14,7 @@ var subscription = function(subscription){
 subscription.create_subscriptions = function allServices(createSub,result) {
     Request.post({
         "headers": {
-            "Authorization": "Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN",
+            "Authorization": globalString,
             "Content-Type": "application/json"
         },
         "url":"https://secure.fusebill.com/v1/subscriptions",
