@@ -4,17 +4,20 @@ var Request = require("request");
 
 
 
-var subscription = function(subscription){
+var Subscription = function(subscription){
     this.subscription=subscription;
+    this.id = subscription.id;
 }
 
 
 
 
-subscription.create_subscriptions = function allServices(createSub,result) {
+Subscription.create_subscriptions = function allServices(createSub,result) {
     Request.post({
         "headers": {
+
             "Authorization": globalString,
+
             "Content-Type": "application/json"
         },
         "url":"https://secure.fusebill.com/v1/subscriptions",
@@ -38,4 +41,4 @@ subscription.create_subscriptions = function allServices(createSub,result) {
 
 
 
-module.exports = subscription;
+module.exports = Subscription;

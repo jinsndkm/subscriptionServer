@@ -7,16 +7,19 @@ var Subscriptions = function (subscriptions) {
     this.planName = subscriptions.planName;
     this.status = subscriptions.status;
     this.planFrequency.planRevisionId = subscriptions.planFrequency.planRevisionId;
+    this.planCode = subscriptions.planCode;
 }
 
 
 Subscriptions.getSubscriptions= function allServices(result) {
     Request.get({
         "headers": {
+
             "Authorization": globalString,
             "Content-Type": "application/json"
         },
         "url": "https://secure.fusebill.com/v1/customers/4871251/subscriptions?query=status:Active"
+
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);

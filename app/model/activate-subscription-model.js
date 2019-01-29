@@ -23,7 +23,9 @@ activatesubscription.activate_subscriptions = function allServices(createSub, re
 
     Request.post({
         "headers": {
+
             "Authorization": globalString,
+
             "Content-Type": "application/json"
         },
         "url": "https://secure.fusebill.com/v1/subscriptionActivation/" + createSub.subscriptionId

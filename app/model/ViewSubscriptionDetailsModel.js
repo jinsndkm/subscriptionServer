@@ -20,7 +20,9 @@ SubscriptionDetails.getSubscriptionDetails= function allServices(id,result) {
 
     Request.get({
         "headers": {
+
             "Authorization": globalString,
+
             "Content-Type": "application/json"
         },
         "url": "https://secure.fusebill.com/v1/subscriptions/"+id

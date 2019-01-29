@@ -17,7 +17,9 @@ var PlanProductList = function(planProductList){
 PlanProductList.getPlanProducts = function allServices(subId,result) {
     Request.get({
         "headers": {
+
             "Authorization": globalString,
+
             "Content-Type": "application/json"
         },
         "url": "https://secure.fusebill.com/v1/plans/"+subId+"/planProducts"
