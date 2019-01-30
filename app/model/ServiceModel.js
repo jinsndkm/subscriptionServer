@@ -1,5 +1,5 @@
 'user strict';
-var sql = require('../db/db.js');
+// var sql = require('../db/db.js');
 var Request = require("request");
 var stripe = require("stripe")("sk_live_WcIoDcfVidYWkaNoELBX2NIX");
 //Task object constructor
