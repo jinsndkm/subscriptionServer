@@ -17,9 +17,10 @@ module.exports = function (app) {
     var listSubscriptions = require('../controller/list-upgrade-subscription-controller');
     var migratesubscription = require('../controller/migrate-subscription-controller');
 
-    var listSubscriptions= require('../controller/list-upgrade-subscription-controller');
-    var migratesubscription= require('../controller/migrate-subscription-controller');
-    var checkCardDetails= require('../controller/check-card-details-controller');
+    var listSubscriptions = require('../controller/list-upgrade-subscription-controller');
+    var migratesubscription = require('../controller/migrate-subscription-controller');
+    var checkCardDetails = require('../controller/check-card-details-controller');
+    var singleSignOnKeyDetails = require('../controller/single-sign-on-key-controller');
 
 
     // todoList Routes
@@ -67,7 +68,12 @@ module.exports = function (app) {
     app.route('/subscription/migratesubscription')
         .post(migratesubscription.migrate_subscriptions);
 
-        app.route('/checkcarddetails/:custId')
+    app.route('/checkcarddetails/:custId')
         .get(checkCardDetails.check_card_details);
+
+    app.route('/getsignlesignonkey/:custId')
+        .get(singleSignOnKeyDetails.get_single_sign_on_key)
+
+
 
 }

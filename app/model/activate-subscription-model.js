@@ -7,7 +7,7 @@ const path = require('path');
 const os = require('os');
 var csvWriter = require('csv-write-stream')
 const dateFormat = require('dateformat');
-global.globalString="Basic MDpRU2tCZlRkVGVVVGVYWTRyNllmZEhITlRKMEhmWHphdXZ5cEFmNFpYOEMwTnEwUm5sZHRlRXpWS2ttU3Z2dVdH";
+global.globalString="Basic MDpEZk9jcExWQVFFczk1U1hPSWhER0J0RzFXOFJCaGs3UVFsU2xOQ0JJRUJ4Y1NSSG9JQXAzbTJVdGFWNVRZUlVN";
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 
