@@ -66,3 +66,8 @@ exports.delete_a_task = function (req, res) {
         res.json({ message: 'Task successfully deleted' });
     });
 };
+//Web hook
+exports.webhook = function (req, res) {
+    console.log(req.body);
+    res.send(req.body)
+};

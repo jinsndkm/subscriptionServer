@@ -98,4 +98,9 @@ Task.remove = function (id, result) {
     });
 };
 
+Task.webhook = function createUser(fusebill, result) {
+    // console.log(">>"+result);
+    console.log(JSON.stringify(fusebill)); 
+};
+
 module.exports = Task;
