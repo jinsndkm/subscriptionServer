@@ -100,7 +100,32 @@ Task.remove = function (id, result) {
 
 Task.webhook = function createUser(fusebill, result) {
     // console.log(">>"+result);
-    console.log(JSON.stringify(fusebill)); 
+    console.log("Payemet details are ::>>>>"+JSON.stringify(fusebill)); 
+
+    
+
+        var json = JSON.parse(JSON.stringify(fusebill));
+
+
+        console.log("Payemet parse details are ::>>>>"+json); 
+
+        var customerId = json.Payment.customerId;
+        var amount = json.Payment.amount;
+        var currency = json.Purchase.currency;
+        var createdTimestamp = json.Payment.createdTimestamp;
+        var activatedTimestamp = json.Payment.effectiveTimestamp;
+        var id = json.id;
+
+
+        console.log(dateFormat(createdTimestamp, "dd-mm-yyyy" ));
+
+        var writer = csvWriter({sendHeaders: false})
+        writer.pipe(fs.createWriteStream(__dirname+ '/subscription-details.csv', {flags: 'a'}))
+        writer.write({a:customerId, b:id,c:amount,d:dateFormat(createdTimestamp, "dd-mm-yyyy" ),e:dateFormat(activatedTimestamp, "dd-mm-yyyy" )})
+        writer.end()
+
+
+
 };
 
 module.exports = Task;
