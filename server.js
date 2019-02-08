@@ -6,14 +6,14 @@ port = process.env.PORT || 3000;
 /*-----------------------------Cross-origin resource sharing Start-------------------------*/ 
 var cors = require('cors')
 
-// var originsWhitelist = [
-//     'http://localhost:4200',      //this is my front-end url for development
-//     'http://localhost:3000'
-// ];
 var originsWhitelist = [
-    'http://subscriptionmanagement.s3-website.ca-central-1.amazonaws.com',      //this is my front-end url for development
+    'http://localhost:4200',      //this is my front-end url for development
     'http://localhost:3000'
 ];
+// var originsWhitelist = [
+//     'http://subscriptionmanagement.s3-website.ca-central-1.amazonaws.com',      //this is my front-end url for development
+//     'http://localhost:3000'
+// ];
 var corsOptions = {
     origin: function (origin, callback) {
         var isWhitelisted = originsWhitelist.indexOf(origin) !== -1;
