@@ -18,7 +18,7 @@ Subscriptions.getSubscriptions= function allServices(result) {
             "Authorization": globalString,
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/customers/4871251/subscriptions?query=status:Active"
+        "url": "https://secure.fusebill.com/v1/customers/4949161/subscriptions?query=status:Active"
 
     }, (error, response, body) => {
         if (error) {
