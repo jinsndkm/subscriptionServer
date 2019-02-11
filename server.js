@@ -7,8 +7,8 @@ port = process.env.PORT || 3000;
 var cors = require('cors')
 
 var originsWhitelist = [
-    'http://localhost:4200',      //this is my front-end url for development
-    'http://localhost:3000'
+    'http://202.21.33.42:4200',      //this is my front-end url for development
+    'http://202.21.33.42:3000'
 ];
 // var originsWhitelist = [
 //     'http://subscriptionmanagement.s3-website.ca-central-1.amazonaws.com',      //this is my front-end url for development
