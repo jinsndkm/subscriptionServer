@@ -15,6 +15,8 @@ var PlanProductList = function(planProductList){
 }
 
 PlanProductList.getPlanProducts = function allServices(subId,result) {
+    console.log('55555555555555555555.................................');
+
     Request.get({
         "headers": {
 
@@ -22,7 +24,7 @@ PlanProductList.getPlanProducts = function allServices(subId,result) {
 
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/plans/"+subId+"/planProducts"
+        "url": "https://api.stripe.com/v1/plans?product="+subId
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);

@@ -22,7 +22,7 @@ ServicesList.getServiceList = function allServices(result) {
 
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/Plans/?query=status:Active"
+        "url": "https://api.stripe.com/v1/products?active=true"
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);
