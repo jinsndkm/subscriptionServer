@@ -3,18 +3,14 @@
 var Request = require("request");
 
 var PlanProductList = function(planProductList){
-    this.productName = planProductList.productName;
+    this.planProductList = planProductList;
     // this.name = services.name;
-   this.productId = planProductList.productId;
-   this.orderToCashCycles=planProductList.orderToCashCycles;
-   this.status=planProductList.status;
-   this.productCode=planProductList.productCode;
-   this.productType=planProductList.productType;
-   this.isIncludedByDefault=planProductList.isIncludedByDefault;
-   this.test=planProductList.orderToCashCycles.quantityRanges;
+   
 }
 
 PlanProductList.getPlanProducts = function allServices(subId,result) {
+    console.log('55555555555555555555.................................');
+
     Request.get({
         "headers": {
 
@@ -22,7 +18,7 @@ PlanProductList.getPlanProducts = function allServices(subId,result) {
 
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/plans/"+subId+"/planProducts"
+        "url": "https://api.stripe.com/v1/plans?product="+subId
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);
