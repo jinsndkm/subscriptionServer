@@ -12,6 +12,8 @@ exports.create_subscription = function (req, res) {
     console.log('subscription controller')
     if (err)
         res.send(err);
+
+       
     res.send(createSub);
 });
 }

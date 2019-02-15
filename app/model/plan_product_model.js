@@ -3,15 +3,9 @@
 var Request = require("request");
 
 var PlanProductList = function(planProductList){
-    this.productName = planProductList.productName;
+    this.planProductList = planProductList;
     // this.name = services.name;
-   this.productId = planProductList.productId;
-   this.orderToCashCycles=planProductList.orderToCashCycles;
-   this.status=planProductList.status;
-   this.productCode=planProductList.productCode;
-   this.productType=planProductList.productType;
-   this.isIncludedByDefault=planProductList.isIncludedByDefault;
-   this.test=planProductList.orderToCashCycles.quantityRanges;
+   
 }
 
 PlanProductList.getPlanProducts = function allServices(subId,result) {
