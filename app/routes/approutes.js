@@ -60,8 +60,11 @@ module.exports = function (app) {
 
     app.route('/mysubscription/viewSubscription/:subId')
         .get(viewSubscriptionDetails.get_subscription_details);
-    app.route('/mysubscription/autorenewal/:subscriptionId/:status')
-        .get(autoRenewal.my_subscriptions_autorenewal);
+    app.route('/mysubscription/autorenewal')
+        .post(autoRenewal.my_subscriptions_autorenewal);
+
+        app.route('/mysubscription/autorenewal/disable')
+        .post(autoRenewal.my_subscriptions_autorenewal_disable);
 
     app.route('/subscription/listupgradesubscriptions/:subId')
         .get(listSubscriptions.list_upgrade_subscriptions);
