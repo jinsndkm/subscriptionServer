@@ -9,12 +9,11 @@ var AutoRenewalDetail = function (autoRenewalDetail) {
 }
 
 
-AutoRenewalDetail.getSubscriptionDetails = function allServices(autoRenewalBody,status, result) {
-    console.log("SSS<><>"+JSON.stringify(autoRenewalBody))
+AutoRenewalDetail.getSubscriptionDetails = function allServices2(autoRenewalBody,result) {
     var request = require("request");
 
     var options = { method: 'POST',
-      url: 'https://api.stripe.com/v1/subscriptions/sub_EWlja3fxv1Kwuh',
+      url: 'https://api.stripe.com/v1/subscriptions/'+autoRenewalBody.subscriptionId,
       headers: 
        { 'postman-token': 'cd1ba710-b5fa-1227-51ef-62010143824a',
          'cache-control': 'no-cache',
@@ -30,10 +29,8 @@ AutoRenewalDetail.getSubscriptionDetails = function allServices(autoRenewalBody,
     
 }
 
-AutoRenewalDetail.disableAutoRenewal = function allServices(autoRenewalBody,result) {
- console.log("on disable<><>"+JSON.stringify(autoRenewalBody.subscriptionId))
+AutoRenewalDetail.disableAutoRenewal = function allServices1(autoRenewalBody,result) {
     var request = require("request");
-    console.log(">>>>"+'https://api.stripe.com/v1/subscriptions/'+autoRenewalBody.subscriptionId);
     var options = { method: 'POST',
       url: 'https://api.stripe.com/v1/subscriptions/'+autoRenewalBody.subscriptionId,
       headers: 
@@ -52,7 +49,7 @@ AutoRenewalDetail.disableAutoRenewal = function allServices(autoRenewalBody,resu
 }
 
 
-AutoRenewalDetail.updateSubscriptionDetails = function allServices(body, statusCode, action,result ) {
+AutoRenewalDetail.updateSubscriptionDetails = function allServices3(body, statusCode, action,result ) {
 
     var json = JSON.parse(body);
     var customerId = json["customerId"];
