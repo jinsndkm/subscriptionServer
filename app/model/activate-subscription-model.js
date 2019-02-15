@@ -10,8 +10,13 @@ const dateFormat = require('dateformat');
 
 // global.globalString="Basic MDo5NTZnYTltU0RqMmVBeU51dzluc1dtZzdUZ2t4enJ4ek04ck1FTERIcVRQNDBTY2wyU2F5THhCNGR5eDlPdDdk";
 
+
+// global.globalString="Basic MDpRU2tCZlRkVGVVVGVYWTRyNllmZEhITlRKMEhmWHphdXZ5cEFmNFpYOEMwTnEwUm5sZHRlRXpWS2ttU3Z2dVdH"; Fusebill
+
 global.globalString="Bearer sk_live_WcIoDcfVidYWkaNoELBX2NIX";
 // global.globalString="Basic MDo5NTZnYTltU0RqMmVBeU51dzluc1dtZzdUZ2t4enJ4ek04ck1FTERIcVRQNDBTY2wyU2F5THhCNGR5eDlPdDdk";
+
+global.custId="cus_EIVdTe9OLZr2Em";
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 

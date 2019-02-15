@@ -14,13 +14,15 @@ exports.get_all_services = function (req, res) {
 }
 
 exports.cancel_subscription = function (req, res) {
-    var sub=new Services(req.body);
-    Services.cancelSubsription(sub,function (err,sub) {
+    console.log("sub IDDDDD::>"+req.params.subscriptionId)
+    // var sub=new Services(req.body);
+    Services.cancelSubsription(req.params.subscriptionId,function (err,services) {
 
         console.log('service controller')
         if (err)
             res.send(err);
-        console.log('res', sub);
-        res.send(sub);
+        // console.log('res', sub);
+        res.send(services);
     });
 }
+
