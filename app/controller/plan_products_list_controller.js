@@ -4,7 +4,7 @@ var PlanProducts= require('../model/plan_product_model.js');
 
 exports.get_product_list = function (req, res) {
 
-    var id = parseInt(req.params.subId);
+    var id = req.params.subId;
 
     console.log('subscription controller ::>> '+id);
 

@@ -7,9 +7,9 @@ var PlanDetails = require('../model/plan-details.js')
 
 exports.get_plan_details = function (req, res) {
 
-    var id = parseInt(req.params.subId);
+    var id = req.params.subId;
 
-    console.log('subscription controller ::>> '+id);
+    console.log('subscription controller11111111 ::>> '+id);
 
     PlanDetails.getPlanDetails(id,function (err, services) {
 
