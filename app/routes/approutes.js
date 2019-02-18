@@ -21,6 +21,7 @@ module.exports = function (app) {
     var migratesubscription = require('../controller/migrate-subscription-controller');
     var checkCardDetails = require('../controller/check-card-details-controller');
     var singleSignOnKeyDetails = require('../controller/single-sign-on-key-controller');
+    var makeCardDefault = require('../controller/make-card-default-controller')
 
 
     // todoList Routes
@@ -79,5 +80,7 @@ module.exports = function (app) {
     .post(todoList.webhook);
     // .set('Authorization', 'Basic 02959D70F933C882DDF85A92DF64C04D');
 
+    app.route('/addservice/carddetails/makedefault')
+    .post(makeCardDefault.make_card_default);
 
 }

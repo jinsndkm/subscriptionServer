@@ -16,7 +16,7 @@ CheckCardDetails.checkCardDetails= function checkCardDetails(id,result) {
             "Authorization": globalString,
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/customers/"+id+"/paymentMethods/creditCard"
+        "url": "https://api.stripe.com/v1/customers/"+id+"/sources?object=card"
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);
