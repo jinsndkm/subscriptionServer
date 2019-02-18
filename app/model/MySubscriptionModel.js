@@ -18,7 +18,8 @@ Subscriptions.getSubscriptions= function allServices(result) {
             "Authorization": globalString,
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/customers/4906741/subscriptions?query=status:Active"
+
+        "url": "https://api.stripe.com/v1/customers/"+custId+"/subscriptions"
 
     }, (error, response, body) => {
         if (error) {

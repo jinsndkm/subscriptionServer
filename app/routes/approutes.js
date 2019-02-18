@@ -37,8 +37,8 @@ module.exports = function (app) {
     app.route('/fusebill')
         .get(service.get_all_services);
 
-    app.route('/subscription/cancel')
-        .post(service.cancel_subscription);
+    app.route('/subscription/cancel/:subscriptionId')
+        .get(service.cancel_subscription);
 
     app.route('/mysubscriprions')
         .get(mySubscrriptios.get_my_subscriptions);
@@ -61,8 +61,11 @@ module.exports = function (app) {
 
     app.route('/mysubscription/viewSubscription/:subId')
         .get(viewSubscriptionDetails.get_subscription_details);
-    app.route('/mysubscription/autorenewal/:subscriptionId/:status')
-        .get(autoRenewal.my_subscriptions_autorenewal);
+    app.route('/mysubscription/autorenewal')
+        .post(autoRenewal.my_subscriptions_autorenewal);
+
+        app.route('/mysubscription/autorenewal/disable')
+        .post(autoRenewal.my_subscriptions_autorenewal_disable);
 
     app.route('/subscription/listupgradesubscriptions/:subId')
         .get(listSubscriptions.list_upgrade_subscriptions);

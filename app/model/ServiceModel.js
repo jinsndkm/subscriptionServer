@@ -23,27 +23,28 @@ Services.getService = function allServices(result) {
     });
 }
 
-Services.cancelSubsription = function cancelSubsription(sub, result) {
+Services.cancelSubsription = function cancelSubsription(subId, result) {
     // const sub1={"subscriptionId":"1160897","cancellationOption":"None"};
-    Request.post({
+    console.log("IDDD::>"+subId)
+    Request.delete({
         "headers": {
             "Authorization": globalString,
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/subscriptionCancellation",
-        "body": JSON.stringify(sub)
-    }, (error, response, body) => {
+        "url": "https://api.stripe.com/v1/subscriptions/"+subId
+    }, (error, response,body) => {
         if (error) {
+            console.log("ERROR");
             return console.dir(error);
         }
-        console.dir("SUB::>" + JSON.stringify(sub))
-        // return console.dir(JSON.parse(response));
-        console.dir("BB" + JSON.stringify(body));
-        console.dir(error)
-        result(null, body);
+      // return console.dir(JSON.parse(response));
+      console.log('calling product api.................................');
+    //    console.dir(JSON.parse(body));
 
+       result(null, body);
+        
     });
-
 }
+
 
 module.exports = Services;
