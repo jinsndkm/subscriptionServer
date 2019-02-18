@@ -6,7 +6,7 @@ var qs = require("querystring");
 
 
 
-var Subscription = function(subscription){
+var MakeCardDefault = function(subscription){
     this.subscription=subscription;
     
 }
@@ -14,18 +14,18 @@ var Subscription = function(subscription){
 
 
 
-Subscription.create_subscriptions = function allServices(createSub,result) {
+MakeCardDefault.make_card_default = function allServices(createSub,result) {
 var json = JSON.parse(JSON.stringify(createSub));
 var cus = json.customer;
-var plan = json.plan;
-    console.log("create subscription bodyyyyyyyyyy 11111111111111 ::>> "+cus+"  >>> "+plan);
+var card = json.card;
+    console.log("Make CArd Default ::>> "+cus+"  >>> "+card);
     var options = { method: 'POST',
-    url: 'https://api.stripe.com/v1/subscriptions',
+    url: 'https://api.stripe.com/v1/customers/'+cus,
     headers: 
      { 
        'content-type': 'application/x-www-form-urlencoded',
        authorization: globalString },
-    form: { customer: cus, plan: plan } };
+    form: { default_source: card } };
   
   Request(options, function (error, response, body) {
     if (error) throw new Error(error);
@@ -44,4 +44,4 @@ result (null,response);
 
 
 
-module.exports = Subscription;
+module.exports = MakeCardDefault;

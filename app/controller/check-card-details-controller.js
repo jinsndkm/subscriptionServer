@@ -4,7 +4,7 @@ var CheckCardDetails = require('../model/check-card-details-model');
 
 exports.check_card_details = function (req, res) {
     
-    var id = parseInt(req.params.custId);
+    var id = req.params.custId;
 
     console.log("CUSTID"+id);
 

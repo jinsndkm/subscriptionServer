@@ -19,14 +19,14 @@ PlanDetails.getPlanDetails = function allServices(subId,result) {
 
             "Content-Type": "application/json"
         },
-        "url": "https://secure.fusebill.com/v1/Plans/"+subId
+        "url": "https://api.stripe.com/v1/products?active=true"
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);
         }
       // return console.dir(JSON.parse(response));
       console.log('calling product api22222222222222.................................');
-       console.dir(JSON.parse(body));
+       
 
        result(null, body);
         
