@@ -31,7 +31,7 @@ SubscriptionDetails.getSubscriptionDetails= function allServices(id,result) {
             return console.dir(error);
         }
         // return console.dir(JSON.parse(response));
-        console.dir(JSON.parse(body));
+        // console.dir(JSON.parse(body));
   
         result(null, body);
 
