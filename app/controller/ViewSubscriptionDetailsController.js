@@ -4,7 +4,7 @@ var SubscriptionDetails = require('../model/ViewSubscriptionDetailsModel.js');
 
 exports.get_subscription_details = function (req, res) {
     
-    var id = parseInt(req.params.subId);
+    var id = req.params.subId;
 
     console.log(id);
 
