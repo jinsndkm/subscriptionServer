@@ -22,6 +22,9 @@ module.exports = function (app) {
     var checkCardDetails = require('../controller/check-card-details-controller');
     var singleSignOnKeyDetails = require('../controller/single-sign-on-key-controller');
     var makeCardDefault = require('../controller/make-card-default-controller')
+
+    var addcardToStripe = require('../controller/add-card-to-stripe-controller');
+
     var writeToCsv = require('../controller/write-to-csv-controller')
 
 
@@ -79,13 +82,16 @@ module.exports = function (app) {
     app.route('/getsignlesignonkey/:custId')
         .get(singleSignOnKeyDetails.get_single_sign_on_key)
 
-        // todoList Routes
+    // todoList Routes
     app.route('/paymentwebhook')
-    .post(todoList.webhook);
+        .post(todoList.webhook);
     // .set('Authorization', 'Basic 02959D70F933C882DDF85A92DF64C04D');
 
     app.route('/addservice/carddetails/makedefault')
-    .post(makeCardDefault.make_card_default);
+        .post(makeCardDefault.make_card_default);
+
+    app.route('/addnewcardtostripe')
+        .post(addcardToStripe.add_card_to_stripe);
 
     app.route('/writetocsv/:custId')
         .get(writeToCsv.write_to_csv)
