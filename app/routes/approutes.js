@@ -22,6 +22,7 @@ module.exports = function (app) {
     var checkCardDetails = require('../controller/check-card-details-controller');
     var singleSignOnKeyDetails = require('../controller/single-sign-on-key-controller');
     var makeCardDefault = require('../controller/make-card-default-controller')
+    var writeToCsv = require('../controller/write-to-csv-controller')
 
 
     // todoList Routes
@@ -85,5 +86,9 @@ module.exports = function (app) {
 
     app.route('/addservice/carddetails/makedefault')
     .post(makeCardDefault.make_card_default);
+
+    app.route('/writetocsv/:custId')
+        .get(writeToCsv.write_to_csv)
+    
 
 }
