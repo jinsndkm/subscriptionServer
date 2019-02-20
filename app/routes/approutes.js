@@ -22,7 +22,11 @@ module.exports = function (app) {
     var checkCardDetails = require('../controller/check-card-details-controller');
     var singleSignOnKeyDetails = require('../controller/single-sign-on-key-controller');
     var makeCardDefault = require('../controller/make-card-default-controller')
+
     var addcardToStripe = require('../controller/add-card-to-stripe-controller');
+
+    var writeToCsv = require('../controller/write-to-csv-controller')
+
 
     // todoList Routes
     app.route('/tasks')
@@ -37,8 +41,8 @@ module.exports = function (app) {
     app.route('/fusebill')
         .get(service.get_all_services);
 
-    app.route('/subscription/cancel')
-        .post(service.cancel_subscription);
+    app.route('/subscription/cancel/:subscriptionId')
+        .get(service.cancel_subscription);
 
     app.route('/mysubscriprions')
         .get(mySubscrriptios.get_my_subscriptions);
@@ -61,8 +65,11 @@ module.exports = function (app) {
 
     app.route('/mysubscription/viewSubscription/:subId')
         .get(viewSubscriptionDetails.get_subscription_details);
-    app.route('/mysubscription/autorenewal/:subscriptionId/:status')
-        .get(autoRenewal.my_subscriptions_autorenewal);
+    app.route('/mysubscription/autorenewal')
+        .post(autoRenewal.my_subscriptions_autorenewal);
+
+        app.route('/mysubscription/autorenewal/disable')
+        .post(autoRenewal.my_subscriptions_autorenewal_disable);
 
     app.route('/subscription/listupgradesubscriptions/:subId')
         .get(listSubscriptions.list_upgrade_subscriptions);
@@ -85,5 +92,9 @@ module.exports = function (app) {
 
     app.route('/addnewcardtostripe')
         .post(addcardToStripe.add_card_to_stripe);
+
+    app.route('/writetocsv/:custId')
+        .get(writeToCsv.write_to_csv)
+    
 
 }

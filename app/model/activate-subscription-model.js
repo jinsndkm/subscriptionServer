@@ -10,12 +10,27 @@ const dateFormat = require('dateformat');
 
 // global.globalString="Basic MDo5NTZnYTltU0RqMmVBeU51dzluc1dtZzdUZ2t4enJ4ek04ck1FTERIcVRQNDBTY2wyU2F5THhCNGR5eDlPdDdk";
 
+
 //global.globalString="Bearer sk_live_WcIoDcfVidYWkaNoELBX2NIX";
 global.globalString="Bearer sk_test_7r4dL5ykom8nvTTA93cVLcve";
 // global.globalString="Basic MDo5NTZnYTltU0RqMmVBeU51dzluc1dtZzdUZ2t4enJ4ek04ck1FTERIcVRQNDBTY2wyU2F5THhCNGR5eDlPdDdk";
 
 //global.globalString="Basic MDpRU2tCZlRkVGVVVGVYWTRyNllmZEhITlRKMEhmWHphdXZ5cEFmNFpYOEMwTnEwUm5sZHRlRXpWS2ttU3Z2dVdH";
 // global.globalString="Basic MDoxMUduWmQxR1pUZkFLV1Z3elEyQW11Tk1wR3p4b0Q1dFgxUHJmbkN6SXA4ZENlTkJ3ZnRKRTRmOWJmTHRSVUlu";
+
+
+
+// global.globalString="Basic MDpRU2tCZlRkVGVVVGVYWTRyNllmZEhITlRKMEhmWHphdXZ5cEFmNFpYOEMwTnEwUm5sZHRlRXpWS2ttU3Z2dVdH"; Fusebill
+
+
+// global.globalString="Bearer sk_live_WcIoDcfVidYWkaNoELBX2NIX";
+//global.globalString="Bearer sk_test_7r4dL5ykom8nvTTA93cVLcve";
+
+//global.globalString="Bearer sk_live_WcIoDcfVidYWkaNoELBX2NIX";
+
+// global.globalString="Basic MDo5NTZnYTltU0RqMmVBeU51dzluc1dtZzdUZ2t4enJ4ek04ck1FTERIcVRQNDBTY2wyU2F5THhCNGR5eDlPdDdk";
+
+global.custId="cus_ESwi6ZsyfX2E3l";
 
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;

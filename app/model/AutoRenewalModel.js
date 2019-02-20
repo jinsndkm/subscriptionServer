@@ -5,43 +5,51 @@ var http = require("http");
 
 //Task object constructor
 var AutoRenewalDetail = function (autoRenewalDetail) {
-    this.customerId = autoRenewalDetail.customerId;
-    this.planFrequency = autoRenewalDetail.planFrequency;
-    this.planCode = autoRenewalDetail.planCode;
-    this.planName = autoRenewalDetail.planName;
-    this.planDescription = autoRenewalDetail.planDescription;
-    this.planReference = autoRenewalDetail.planReference;
+    this.subscriptionId=autoRenewalDetail.subscriptionId;
 }
 
-var getBody;
-var getStatus;
 
-AutoRenewalDetail.getSubscriptionDetails = function allServices(subscriptionId,status, result) {
+AutoRenewalDetail.getSubscriptionDetails = function allServices2(autoRenewalBody,result) {
+    var request = require("request");
 
-    Request.get({
-        "headers": {
-            "Authorization": globalString,
-            "Content-Type": "application/json"
-        },
-        "url": "https://secure.fusebill.com/v1/subscriptions/" + subscriptionId
-    }, (error, response, body) => {
-        if (error) {
-            return console.dir(error);
-        }
-        console.dir(JSON.parse(body));
-        getBody = body;
-
-        // Request.response.result
-        if (response.statusCode == 200) {
-            var statusCode = this.updateSubscriptionDetails(getBody, response.statusCode, status);
-        }
-        result(null, body);
+    var options = { method: 'POST',
+      url: 'https://api.stripe.com/v1/subscriptions/'+autoRenewalBody.subscriptionId,
+      headers: 
+       { 'postman-token': 'cd1ba710-b5fa-1227-51ef-62010143824a',
+         'cache-control': 'no-cache',
+         authorization: globalString,
+         'content-type': 'application/x-www-form-urlencoded' },
+      form: { billing: 'charge_automatically'} };
+    
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+    
+      console.log(body);
     });
+    
+}
+
+AutoRenewalDetail.disableAutoRenewal = function allServices1(autoRenewalBody,result) {
+    var request = require("request");
+    var options = { method: 'POST',
+      url: 'https://api.stripe.com/v1/subscriptions/'+autoRenewalBody.subscriptionId,
+      headers: 
+       { 'postman-token': 'cd1ba710-b5fa-1227-51ef-62010143824a',
+         'cache-control': 'no-cache',
+         authorization: globalString,
+         'content-type': 'application/x-www-form-urlencoded' },
+      form: {billing: 'send_invoice',days_until_due:30} };
+    
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+    
+      console.log(body);
+    });
+    
 }
 
 
-
-AutoRenewalDetail.updateSubscriptionDetails = function allServices(body, statusCode, action,result ) {
+AutoRenewalDetail.updateSubscriptionDetails = function allServices3(body, statusCode, action,result ) {
 
     var json = JSON.parse(body);
     var customerId = json["customerId"];
