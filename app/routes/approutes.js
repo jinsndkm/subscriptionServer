@@ -26,6 +26,7 @@ module.exports = function (app) {
     var addcardToStripe = require('../controller/add-card-to-stripe-controller');
 
     var writeToCsv = require('../controller/write-to-csv-controller')
+    var deletecard = require('../controller/delete-card-controller')
 
 
     // todoList Routes
@@ -95,6 +96,9 @@ module.exports = function (app) {
 
     app.route('/writetocsv/:custId')
         .get(writeToCsv.write_to_csv)
+
+        app.route('/deletecard/:cardID')
+        .delete(deletecard.delete_card)
     
 
 }
