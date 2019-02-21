@@ -7,7 +7,8 @@ module.exports = function (app) {
 
     var serviceList = require('../controller/addServiceController');
     var productList = require('../controller/plan_products_list_controller');
-    var plandetails = require('../controller/plan-details-controller')
+    var plandetails = require('../controller/plan-details-controller');
+    var productdetails = require('../controller/product-details-controller')
     var subscription = require('../controller/create-subscription-controller')
     var activateSub = require('../controller/activate-subscription-controller')
 
@@ -27,6 +28,10 @@ module.exports = function (app) {
 
     var writeToCsv = require('../controller/write-to-csv-controller')
     var deletecard = require('../controller/delete-card-controller')
+
+    var getAPlanDetail = require('../controller/get-a-product-controller')
+
+    var invoiceDetails = require('../controller/create-invoice-controller')
 
 
     // todoList Routes
@@ -58,6 +63,10 @@ module.exports = function (app) {
     app.route('/plandetails/:subId')
         .get(plandetails.get_plan_details);
 
+    app.route('/productdetails/:subId')
+        .get(productdetails.get_product_details);
+
+
     app.route('/subscription/create')
         .post(subscription.create_subscription);
 
@@ -69,7 +78,7 @@ module.exports = function (app) {
     app.route('/mysubscription/autorenewal')
         .post(autoRenewal.my_subscriptions_autorenewal);
 
-        app.route('/mysubscription/autorenewal/disable')
+    app.route('/mysubscription/autorenewal/disable')
         .post(autoRenewal.my_subscriptions_autorenewal_disable);
 
     app.route('/subscription/listupgradesubscriptions/:subId')
@@ -97,8 +106,14 @@ module.exports = function (app) {
     app.route('/writetocsv/:custId')
         .get(writeToCsv.write_to_csv)
 
-        app.route('/deletecard/:cardID')
+    app.route('/deletecard/:cardID')
         .delete(deletecard.delete_card)
-    
+
+    app.route('/getplandetails/:planFreID')
+        .get(getAPlanDetail.get_a_plan_detail)
+
+    app.route('/createInvoice')
+        .post(invoiceDetails.create_invoice);
+
 
 }
