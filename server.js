@@ -1,14 +1,14 @@
 const express = require('express'),
     app = express(),
     bodyParser = require('body-parser');
-port = process.env.PORT || 3000;
+port = process.env.PORT || 4000;
 
 /*-----------------------------Cross-origin resource sharing Start-------------------------*/ 
 var cors = require('cors')
 
 var originsWhitelist = [
-    'http://localhost:4200',      //this is my front-end url for development
-    'http://localhost:3000'
+    'http://202.21.33.42:3200',      //this is my front-end url for development
+    'http://202.21.33.42:4000'
 ];
 // var originsWhitelist = [
 //     'http://subscriptionmanagement.s3-website.ca-central-1.amazonaws.com',      //this is my front-end url for development
@@ -56,7 +56,7 @@ app.use(cors(corsOptions))
 // // connect to database
 // mc.connect();
 
-app.listen(port);
+app.listen(port,'0.0.0.0');
 
 console.log('API server started on: ' + port);
 
