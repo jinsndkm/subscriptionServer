@@ -28,6 +28,7 @@ module.exports = function (app) {
 
     var writeToCsv = require('../controller/write-to-csv-controller')
     var deletecard = require('../controller/delete-card-controller')
+    var activateTrial = require('../controller/activate-trial-controller')
 
     var getAPlanDetail = require('../controller/get-a-product-controller')
 
@@ -69,6 +70,11 @@ module.exports = function (app) {
 
     app.route('/subscription/create')
         .post(subscription.create_subscription);
+
+        app.route('/subscription/activatetrial')
+        .post(activateTrial.activate_trial_subscription);
+
+        
 
     app.route('/subscription/activate')
         .post(activateSub.activate_subscription);

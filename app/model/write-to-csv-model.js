@@ -33,11 +33,14 @@ WriteToCSV.write_to_csv = function allServices(custId,result) {
       
      
       //var json=JSON.parse(body);
+
+      
+      console.log("Write to csv response>>>>>>>>>>>>>>>>>>>>"+body);
       let json = JSON.parse(body);
       var data=json.data;
 
       let paymentID = data[0].id; 
-      let amount = data[0].amount; 
+      let amount = 0; 
       let created = data[0].created; 
      
       
